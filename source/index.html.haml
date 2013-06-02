@@ -1,0 +1,14 @@
+---
+title: eHansardy
+---
+
+
+#main
+  #title
+    %h1
+      %span.e e
+      Hansardy
+
+  .rep-photos.polaroids{'data-bind' => 'foreach: representatives'}
+    %a.polaroid{'data-bind' => 'attr: {title: name}', :href => '#'}
+      %img.rep-photo{'data-bind' => 'attr: {src: image_url}'}

@@ -1,0 +1,36 @@
+//= require 'polaroids'
+
+@charset "utf-8";
+
+body {
+  background: #d4d4d4 url("../images/background.jpg") repeat;
+  font-family: 'Helvetica Neue';
+
+  #main {
+    #title {
+      background-color: white;
+      margin: 25px 10px;
+      padding: 0px 5px;
+      width: 300px;
+      border: 1px solid black;
+      border-radius: 3px;
+      text-align: center;
+
+      h1 {
+        line-height: 30px;
+        font-size: 60px;
+        font-weight: lighter;
+        color: rgb(31, 117, 170);
+
+        .e {
+          font-weight: bold;
+          margin-right: -18px;
+          color: grey;
+        }
+      }
+    }
+
+    width: 90%;
+    margin: auto;
+  }
+}

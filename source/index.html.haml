@@ -9,6 +9,8 @@ title: eHansardy
       %span.e e
       Hansardy
 
+  #search{'data-bind' => 'fadeVisible: hasSearchText, text: searchText'}
+
   .main-view{'data-bind' => 'fadeVisible: !hasRepresentative()'}
     .rep-photos.polaroids{'data-bind' => 'foreach: representatives'}
       %a.polaroid{'data-bind' => 'attr: {title: name}, css: partyClass, click: $parent.selectRepresentative', :href => '#'}
@@ -22,5 +24,17 @@ title: eHansardy
         %h2.member-for{'data-bind' => 'text: "Member for " + electorate'}
         %a.back{'data-bind' => 'click: $parent.backToMenu'} Back
 
-      .body
-        
+      .activity.section
+        %h3 So what have they been up to?
+        .speeches.tally
+          %h2 Speeches
+          %h3{'data-bind' => 'text: speechCount'}
+        .interjections.tally
+          %h2 Interjections
+          %h3{'data-bind' => 'text: interjectionCount'}
+        .warnings.tally
+          %h2 Warnings
+          %h3{'data-bind' => 'text: warningCount'}
+        .removals.tally
+          %h2 Removals
+          %h3{'data-bind' => 'text: removalCount'}

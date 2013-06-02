@@ -9,7 +9,26 @@ $(function() {
 
   $.getJSON('http://govhack.dev/api/representatives', function(data) {
     $.each(data, function(_, rep) {
-      mainViewModel.representatives.push(new RepresentativeViewModel(rep));
+      mainViewModel.allRepresentatives.push(new RepresentativeViewModel(rep));
     });
   });
+
+  var setupSearch = function() {
+    $('body').keydown(function(e) {
+      var current = mainViewModel.searchText();
+
+      if (e.keyCode == 8) {
+        mainViewModel.searchText(current.substring(0,current.length-1));
+        e.preventDefault();
+      }
+      else {
+        if ((e.keyCode > 64 && e.keyCode < 91) || e.keyCode == 32) {
+          var keyPressed = String.fromCharCode(e.keyCode);
+          mainViewModel.searchText(mainViewModel.searchText() + keyPressed);
+        }
+      }
+    });
+  };
+
+  window.setTimeout(setupSearch, 500);
 });

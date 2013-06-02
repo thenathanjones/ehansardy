@@ -10,5 +10,5 @@ title: eHansardy
       Hansardy
 
   .rep-photos.polaroids{'data-bind' => 'foreach: representatives'}
-    %a.polaroid{'data-bind' => 'attr: {title: name}', :href => '#'}
+    %a.polaroid{'data-bind' => 'attr: {title: name}, css: partyClass', :href => '#'}
       %img.rep-photo{'data-bind' => 'attr: {src: image_url}'}

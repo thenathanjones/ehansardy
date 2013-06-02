@@ -5,7 +5,7 @@
   a {
     background: white;
     float: left;
-    margin: 0 15px 30px;
+    margin: 0 5px 30px;
     padding: 10px 10px 25px;
     text-align: center;
     text-decoration: none;
@@ -38,15 +38,15 @@
       transform: rotate(3deg);
     }
     &:nth-child(3n) {
-      -webkit-transform: rotate(-13deg);
-      -moz-transform: rotate(-13deg);
-      transform: rotate(-13deg);
+      -webkit-transform: rotate(-6deg);
+      -moz-transform: rotate(-6deg);
+      transform: rotate(-6deg);
     }
     &:nth-child(4n)
     {
-      -webkit-transform: rotate(10deg);
-      -moz-transform: rotate(10deg);
-      transform: rotate(10deg);
+      -webkit-transform: rotate(1deg);
+      -moz-transform: rotate(1deg);
+      transform: rotate(1deg);
     }
     &:nth-child(5n)
     {
@@ -69,7 +69,15 @@
     }
 
     &.labor:hover {
+      -webkit-box-shadow: 0 10px 20px rgba(173, 54, 35, 1);
+      -moz-box-shadow: 0 10px 20px rgba(173, 54, 35,1);
+      box-shadow: 0 10px 20px rgba(173, 54, 35,1);
+    }
 
+    &.liberal:hover {
+      -webkit-box-shadow: 0 10px 20px rgba(23, 31, 67, 1);
+      -moz-box-shadow: 0 10px 20px rgba(23, 31, 67,1);
+      box-shadow: 0 10px 20px rgba(23, 31, 67,1);
     }
   }  
 

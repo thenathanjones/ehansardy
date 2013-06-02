@@ -5,12 +5,16 @@ function MainViewModel() {
 
   self.selectedRepresentative = ko.observable(null);
   self.hasRepresentative = ko.computed(function() {
-    return self.selectedRepresentative != null;
+    return self.selectedRepresentative() != null;
   });
 
-  self.selectRepresentative = function() {
-    
+  self.selectRepresentative = function(rep) {
+    self.selectedRepresentative(rep);
   };
+
+  self.backToMenu = function() {
+    self.selectedRepresentative(null);
+  }
 }
 
 function RepresentativeViewModel(rep) {
@@ -23,6 +27,8 @@ function RepresentativeViewModel(rep) {
   self.name = rep.full_name;
 
   self.image_url = rep.image_url;
+
+  self.electorate = rep.electorate;
 
   self.party = rep.party;
   self.partyClass = ko.computed(function() {

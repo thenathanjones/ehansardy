@@ -9,6 +9,18 @@ title: eHansardy
       %span.e e
       Hansardy
 
-  .rep-photos.polaroids{'data-bind' => 'foreach: representatives'}
-    %a.polaroid{'data-bind' => 'attr: {title: name}, css: partyClass', :href => '#'}
-      %img.rep-photo{'data-bind' => 'attr: {src: image_url}'}
+  .main-view{'data-bind' => 'fadeVisible: !hasRepresentative()'}
+    .rep-photos.polaroids{'data-bind' => 'foreach: representatives'}
+      %a.polaroid{'data-bind' => 'attr: {title: name}, css: partyClass, click: $parent.selectRepresentative', :href => '#'}
+        %img.rep-photo{'data-bind' => 'attr: {src: image_url}'}
+
+  .rep-view{'data-bind' => 'fadeVisible: hasRepresentative'}
+    .rep{'data-bind' => 'with: selectedRepresentative'}
+      .header
+        %img.rep-photo{'data-bind' => 'attr: {src: image_url}'}
+        %h1.name{'data-bind' => 'text: name'} 
+        %h2.member-for{'data-bind' => 'text: "Member for " + electorate'}
+        %a.back{'data-bind' => 'click: $parent.backToMenu'} Back
+
+      .body
+        

@@ -30,6 +30,46 @@ body {
       }
     }
 
+    .rep {
+
+      .header {
+        .rep-photo {
+          width: 150px;
+          display: inline-block;
+        }
+
+        h1.name {
+          margin-left: 20px;
+          display: inline-block;
+          font-size: 60px;
+          color: white;
+        }
+
+        h2.member-for {
+          margin-left: 20px;
+          display: inline-block;
+          font-size: 30px;
+          color: white;
+        }
+
+        .back {
+          font-size: 20px;
+          cursor: pointer;
+          padding: 6px;
+          background: black;
+          color: white;
+          float: right;
+        }
+      }
+
+      .body {
+        background: white;
+        border: 1px solid black;
+        border-radius: 3px;
+        min-height: 100px;
+      }
+    }
+
     width: 90%;
     margin: auto;
   }

@@ -14,7 +14,7 @@ title: eHansardy
   .main-view{'data-bind' => 'fadeVisible: !hasRepresentative()'}
     .rep-photos.polaroids{'data-bind' => 'foreach: representatives'}
       %a.polaroid{'data-bind' => 'attr: {title: name}, css: partyClass, click: $parent.selectRepresentative', :href => '#'}
-        %img.rep-photo{'data-bind' => 'attr: {src: image_url}'}
+        %img.rep-photo{'data-bind' => 'attr: {src: image_url, "data-id": person_id}'}
 
   .rep-view{'data-bind' => 'fadeVisible: hasRepresentative'}
     .rep{'data-bind' => 'with: selectedRepresentative'}

@@ -30,5 +30,18 @@ $(function() {
     });
   };
 
+  var setupOFace = function() {
+    var julia = $('[data-id=10257]');
+    var originalImage = julia.attr('src');
+    julia.mouseenter(function() {
+      $(this).attr('src', './images/julia-oface.jpg');
+    });
+    julia.mouseleave(function() {
+      $(this).attr('src', originalImage);
+    });
+  };
+
+  window.setTimeout(setupOFace, 500);
+
   window.setTimeout(setupSearch, 500);
 });
